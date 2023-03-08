@@ -1,12 +1,14 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { AppService } from './app.service';
+import { CommitSummaryDto } from './commit-summary.dto';
+import { GetCommitListDto } from './get-commit-list.dto';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  async getCommitList(@Query() query: GetCommitListDto): Promise<CommitSummaryDto[]> {
+    return await this.appService.getCommitList(query);
   }
 }
