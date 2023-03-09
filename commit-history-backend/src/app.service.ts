@@ -8,8 +8,16 @@ import { ApiClient } from './api-client';
 export class AppService {
   constructor(private readonly apiClient: ApiClient) { }
 
+  private static getSinceDate(query: GetCommitListDto) {
+    const { since } = query;
+    if (since) {
+      return new Date(since);
+    }
+    return null;
+  }
+
   async getCommitList(query: GetCommitListDto): Promise<CommitSummaryDto[]> {
-    const commitListPromise = await this.apiClient.getCommitList(query);
+    const commitListPromise = await this.apiClient.getCommitList(AppService.getSinceDate(query));
     const { data } = commitListPromise;
     const response = [];
     data.forEach((element: any) => {
