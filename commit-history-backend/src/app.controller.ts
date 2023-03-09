@@ -3,8 +3,10 @@ import { AppService } from './app.service';
 import { CommitSummaryDto } from './commit-summary.dto';
 import { GetCommitListDto } from './get-commit-list.dto';
 
-@Controller()
+@Controller({ path: 'commits' })
 export class AppController {
+  private readonly logger = new Logger(AppController.name);
+
   constructor(private readonly appService: AppService) { }
 
   @Get()
