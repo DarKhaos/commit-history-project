@@ -1,7 +1,16 @@
+import { ApiProperty } from "@nestjs/swagger";
+
 export class CommitSummaryDto {
+    @ApiProperty({ description: 'Commit ID' })
     id: string;
+
+    @ApiProperty({ description: 'Author name' })
     author: string;
+
+    @ApiProperty({ description: 'Commit message' })
     message: string;
+
+    @ApiProperty({ description: 'Commit URL' })
     url: string;
 
     public static from(obj: any): CommitSummaryDto {
