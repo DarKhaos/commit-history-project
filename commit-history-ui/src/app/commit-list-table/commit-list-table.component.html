@@ -1,0 +1,22 @@
+<div>
+    <table class="w-full table-fixed border border-slate-500">
+        <caption>Commit History Table</caption>
+        <thead>
+            <tr class="bg-gray-200">
+                <th class="w-32 border border-slate-300">Author</th>
+                <th class="border border-slate-300">Message</th>
+                <th class="w-2/4 border border-slate-300">URL</th>
+            </tr>
+        </thead>
+        <tbody (mouseleave)="selectRow(null)">
+            <tr *ngFor="let commitItem of commitList" (mouseenter)="selectRow(commitItem.id)"
+                [ngClass]="{ 'bg-gray-200': commitItem.id === selectedRowId }">
+                <td class="font-semibold text-center px-2 py-2 border border-slate-300">{{ commitItem.author }}</td>
+                <td class="px-2 py-2 border border-slate-300">{{ commitItem.message }}</td>
+                <td class="px-2 py-2 text-ellipsis overflow-hidden whitespace-nowrap border border-slate-300">
+                    <a class="text-blue-600" href="{{ commitItem.url }}">{{ commitItem.url }}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
