@@ -12,9 +12,9 @@
 - Run: npm install -g @nestjs/cli
 ### Add .env file to NestJS project
 - Go to: /commit-history-backend
-- Add .env file
-TOKEN=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
-GITHUB_USERNAME=DarKhaos
+- Add .env file (replace &lt;password2&gt; with xrjqpdu46PlOvbvtQJ2DDWGF)<br />
+TOKEN=ghp_qyhadrH9DTn9&lt;password2&gt;<br />
+GITHUB_USERNAME=DarKhaos<br />
 REPO_NAME=commit-history-project
 ### Run NestJS project
 - Run: npm run start:dev
