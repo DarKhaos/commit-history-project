@@ -19,7 +19,14 @@ export class AppComponent {
     this.latestDate = currentLatestDate;
   }
 
+  private initializeLatestDate(): void {
+    if (!this.latestDate) {
+      this.latestDate = new Date();
+    }
+  }
+
   setLoading(loading: boolean): void {
     this.loading = loading;
+    this.initializeLatestDate();
   }
 }
