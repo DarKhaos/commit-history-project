@@ -12,6 +12,7 @@
 - Run: npm install -g @nestjs/cli
 ### Add .env file to NestJS project
 - Go to: /commit-history-backend
+- Run: npm install
 - Add .env file (replace &lt;password2&gt; with xrjqpdu46PlOvbvtQJ2DDWGF)<br />
 TOKEN=ghp_qyhadrH9DTn9&lt;password2&gt;<br />
 GITHUB_USERNAME=DarKhaos<br />
@@ -22,5 +23,6 @@ REPO_NAME=commit-history-project
 - Swagger path is: /api
 ### Run Angular project
 - Go to: /commit-history-ui folder 
+- Run: npm install
 - Run: ng serve
 - Development server runs on port: 4200 in localhost
